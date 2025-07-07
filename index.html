@@ -25,6 +25,18 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
+    /* Transisi untuk dropdown */
+    .group .dropdown-menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+        pointer-events: none;
+    }
+    .group:hover .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
   </style>
 </head>
 
@@ -46,11 +58,60 @@
           </div>
           <!-- Navigasi untuk Desktop -->
           <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-4">
-              <a href="Fasilitas.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Fakultas</a>
-              <a href="HIMA.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Himpunan</a>
-              <a href="kontak.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Service</a>
-              <a href="pro.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+            <div class="ml-10 flex items-baseline space-x-2">
+              <!-- Dropdown Fakultas -->
+              <div class="relative group">
+                <button class="text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  <span>Fakultas</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Box Dropdown -->
+                <div class="dropdown-menu absolute z-10 bg-white dark:bg-gray-800 shadow-lg rounded-md mt-2 w-48">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Fakultas Teknik</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Fakultas Ekonomi</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Fakultas Hukum</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Fakultas Kedokteran</a>
+                </div>
+              </div>
+              <!-- Dropdown Himpunan -->
+              <div class="relative group">
+                <button class="text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  <span>Himpunan</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Box Dropdown -->
+                <div class="dropdown-menu absolute z-10 bg-white dark:bg-gray-800 shadow-lg rounded-md mt-2 w-48">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">HIMA Teknik Informatika</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">HIMA Manajemen</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">HIMA Akuntansi</a>
+                </div>
+              </div>
+              <!-- Dropdown Service -->
+              <div class="relative group">
+                <button class="text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  <span>Service</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Box Dropdown -->
+                <div class="dropdown-menu absolute z-10 bg-white dark:bg-gray-800 shadow-lg rounded-md mt-2 w-48">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Layanan Mahasiswa</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Perpustakaan</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Pusat Karir</a>
+                </div>
+              </div>
+              <!-- Dropdown Profile -->
+              <div class="relative group">
+                <button class="text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  <span>Profile</span>
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Box Dropdown -->
+                <div class="dropdown-menu absolute z-10 bg-white dark:bg-gray-800 shadow-lg rounded-md mt-2 w-48">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Visi & Misi</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Sejarah</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Struktur Organisasi</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
