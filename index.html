@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Univrsitas Andalan</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="/dist/output.css" rel="stylesheet">
 </head>
 
 <body class="dark:bg-gray-900 text-white">
@@ -37,21 +37,33 @@
   <hr class="opacity-25">
 
   <!-- Konten utama -->
-  <div class="mx-auto mt-12">
+  <div class="mx-auto mt-12 m-24">
     <h1 class="text-center text-4xl">Selamat datang <span class="font-bold underline">Nama Mahasiswa</span></h1>
     <p class="text-center pt-3">Lorem ipsum dolor sit amet consecte elit. <i>Voluptates provident tenetur</i>
       possimus iste voluptatibus unde! Lorem ipsum dolor sit.</p>
   </div>
 
   <!-- Tabel databse -->
-  <div class="mx-20 mt-6 px-20">
+  <div class="mx-20 mt-6 px-3">
     <div class="flex items-center justify-between mb-4">
       <div>
         <h3 class="text-lg font-semibold text-gray-300">Tabel dari semua Matkul</h3>
         <p class="font-extralight text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
-      <button
-        class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Tambah</button>
+      <div class="#">
+        <button
+          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Tambah
+        </button>
+        <button
+          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Hapus
+        </button>
+        <button
+          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Ubah
+        </button>
+        <button
+          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Detail
+        </button>
+      </div>
     </div>
   </div>
 
@@ -69,7 +81,7 @@
 
   <!-- Data kehadiran mahasisaw -->
   <div>
-    <div class="mt-8 pt-3 mx-12">
+    <div class="mt-8 pt-3 mx-48">
       <div class="border-transparent">
         <table class=" w-full text-center">
           <thead class="border-b border-gray-300">
@@ -93,6 +105,71 @@
           <!-- Baris Data -->
           <div>
             <tbody>
+              <tr class="bg-gray-800">
+                <td class="px-2 py-3">1</td>
+                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
+                    class="pb-1">NIM2342376642</td>
+                <td class="px-2 py-1">12</td>
+                <td class="px-2 py-1">Ahmad fatoni</td>
+                <td class="px-2 py-1">Basis Data</td>
+                <td class="px-2 py-1">09.00</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
+                </td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
+              </tr>
+              <tr>
+                <td class="px-2 py-3">2</td>
+                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
+                    class="pb-1">NIM2342376642</td>
+                <td class="px-2 py-1">12</td>
+                <td class="px-2 py-1">Ahmad fatoni</td>
+                <td class="px-2 py-1">Basis Data</td>
+                <td class="px-2 py-1">09.00</td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
+                </td>
+                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
+              </tr>
+              <tr class="bg-gray-800">
+                <td class="px-2 py-3">3</td>
+                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
+                    class="pb-1">NIM2342376642</td>
+                <td class="px-2 py-1">12</td>
+                <td class="px-2 py-1">Ahmad fatoni</td>
+                <td class="px-2 py-1">Basis Data</td>
+                <td class="px-2 py-1">09.00</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
+                </td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
+              </tr>
+              <tr>
+                <td class="px-2 py-3">4</td>
+                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
+                    class="pb-1">NIM2342376642</td>
+                <td class="px-2 py-1">12</td>
+                <td class="px-2 py-1">Ahmad fatoni</td>
+                <td class="px-2 py-1">Basis Data</td>
+                <td class="px-2 py-1">09.00</td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
+                </td>
+                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
+              </tr>
+              <tr class="bg-gray-800">
+                <td class="px-2 py-3">5</td>
+                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
+                    class="pb-1">NIM2342376642</td>
+                <td class="px-2 py-1">12</td>
+                <td class="px-2 py-1">Ahmad fatoni</td>
+                <td class="px-2 py-1">Basis Data</td>
+                <td class="px-2 py-1">09.00</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
+                </td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
+              </tr>
               <tr>
                 <td class="px-2 py-3">1</td>
                 <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
@@ -101,21 +178,11 @@
                 <td class="px-2 py-1">Ahmad fatoni</td>
                 <td class="px-2 py-1">Basis Data</td>
                 <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1 text-green-400">✓</td>
-                <td class="px-2 py-1 text-red-500"></td>
+                <td class="px-2 py-1 text-red-500 font-bold">-</td>
+                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
+                </td>
                 <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
               </tr>
-              <tr class="border-t border-gray-700">
-                <td class="px-2 py-1">2</td>
-                <td class="px-2 py-1">NIM62623333</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Abdulah </td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1 text-green-400"></td>
-                <td class="px-2 py-1 text-red-500">✓</td>
-              </tr>
-
             </tbody>
           </div>
       </div>
