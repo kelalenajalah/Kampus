@@ -4,191 +4,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Univrsitas Andalan</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Universitas Andalan</title>
+  <!-- Menggunakan CDN Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Menggunakan Google Fonts untuk font Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Menggunakan font Inter sebagai default */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Menyembunyikan scrollbar untuk browser webkit */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Menyembunyikan scrollbar untuk IE, Edge, dan Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+  </style>
 </head>
 
-<body class="dark:bg-gray-900 text-white">
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
 
   <!-- Navigasi bar -->
+  <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo dan Navigasi Kiri -->
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <a href="index.html">
+              <!-- Placeholder untuk logo -->
+              <div class="w-32 h-10 bg-indigo-500 dark:bg-indigo-600 rounded-lg flex items-center justify-center font-bold">
+                Logo
+              </div>
+            </a>
+          </div>
+          <!-- Navigasi untuk Desktop -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="Fasilitas.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Fakultas</a>
+              <a href="HIMA.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Himpunan</a>
+              <a href="kontak.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Service</a>
+              <a href="pro.html" class="text-gray-600 dark:text-gray-300 hover:underline px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+            </div>
+          </div>
+        </div>
 
-  <div class="flex justify-between py-5 px-10 items-center dark:bg-gray-900 text-sm">
-    <div class="flex space-x-6 justify-between">
-      <div class="">
-        <a href="index.html">
-          <img src="#" alt="Logo disini" class="px-4 py-2">
-        </a>
-      </div>
-      <div class="flex gap-6 px-4 py-2">
-        <div class="hover:underline"><a href="Fasilitas.html">Fakultas</a></div>
-        <div class="hover:underline"><a href="HIMA.html">Himpunan mahasiswa</a></div>
-        <div class="hover:underline"><a href="kontak.html">Service</a></div>
-        <div class="hover:underline"><a href="pro.html">Profile universitas</a></div>
+        <!-- Pencarian dan Login untuk Desktop -->
+        <div class="hidden md:flex items-center gap-4">
+          <input type="text" placeholder="Cari..." class="border px-4 py-2 rounded-full border-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-400 bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+          <a href="SignIn.html" class="text-sm rounded-full px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">Login</a>
+        </div>
+
+        <!-- Tombol Menu Mobile -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon Hamburger -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon Close (X) -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="h-full flex gap-5 border-l  border-l-gray-700 pl-5">
-        <input type="text" placeholder="Masukan nama..."
-          class="border px-4 py-1 rounded-full border-gray-600 focus:border-gray-400">
-        <a href="SignIn.html" class="text-sm rounded-full px-4 py-1 bg-slate-100 text-gray-900">Login</a>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="Fasilitas.html" class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Fakultas</a>
+        <a href="HIMA.html" class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Himpunan</a>
+        <a href="kontak.html" class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Service</a>
+        <a href="pro.html" class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Profile</a>
+        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+           <div class="flex flex-col gap-4 px-3">
+             <input type="text" placeholder="Cari..." class="w-full border px-4 py-2 rounded-full border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+             <a href="SignIn.html" class="w-full text-center text-sm rounded-full px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">Login</a>
+           </div>
+        </div>
       </div>
     </div>
-  </div>
-  <hr class="opacity-25">
+  </nav>
 
   <!-- Konten utama -->
-  <div class="mx-auto mt-12 m-24">
-    <h1 class="text-center text-4xl">Selamat datang <span class="font-bold underline">Nama Mahasiswa</span></h1>
-    <p class="text-center pt-3">Lorem ipsum dolor sit amet consecte elit. <i>Voluptates provident tenetur</i>
-      possimus iste voluptatibus unde! Lorem ipsum dolor sit.</p>
-  </div>
+  <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="text-center my-8 md:my-12">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-light">Selamat datang <span class="font-bold text-indigo-500 dark:text-indigo-400">Nama Mahasiswa</span></h1>
+      <p class="mt-3 max-w-2xl mx-auto text-base md:text-lg text-gray-500 dark:text-gray-400">Ini adalah portal akademik Anda, tempat untuk mengelola mata kuliah dan memantau kehadiran.</p>
+    </div>
 
-  <!-- Tabel databse -->
-  <div class="mx-20 mt-6 px-3">
-    <div class="flex items-center justify-between mb-4">
+    <!-- Kontrol Tabel -->
+    <div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-lg p-4 md:p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Daftar Mata Kuliah</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Kelola semua mata kuliah yang Anda ambil semester ini.</p>
+            </div>
+            <!-- Tombol Aksi -->
+            <div class="flex flex-wrap gap-2">
+                <button class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/30 text-white text-sm font-semibold rounded-full hover:bg-indigo-700 transition-all duration-300">Tambah</button>
+                <button class="py-2 px-4 bg-red-600 shadow-lg shadow-red-600/30 text-white text-sm font-semibold rounded-full hover:bg-red-700 transition-all duration-300">Hapus</button>
+                <button class="py-2 px-4 bg-yellow-500 shadow-lg shadow-yellow-500/30 text-white text-sm font-semibold rounded-full hover:bg-yellow-600 transition-all duration-300">Ubah</button>
+                <button class="py-2 px-4 bg-gray-500 shadow-lg shadow-gray-500/30 text-white text-sm font-semibold rounded-full hover:bg-gray-600 transition-all duration-300">Detail</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Tabel -->
+    <div class="flex flex-col sm:flex-row justify-between items-center mb-4 px-1">
       <div>
-        <h3 class="text-lg font-semibold text-gray-300">Tabel dari semua Matkul</h3>
-        <p class="font-extralight text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400">Urutkan <span class="font-mono">&#x2195;</span></button>
       </div>
-      <div class="#">
-        <button
-          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Tambah
-        </button>
-        <button
-          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Hapus
-        </button>
-        <button
-          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Ubah
-        </button>
-        <button
-          class="py-2 px-4 bg-indigo-600 shadow-lg shadow-indigo-600/80 text-white text-sm font-semibold rounded-full hover:bg-indigo-800">Detail
-        </button>
+      <div class="flex flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-0">
+        <button class="px-3 py-1 text-sm rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">Jurusan</button>
+        <button class="px-3 py-1 text-sm rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">Jadwal</button>
+        <button class="px-3 py-1 text-sm rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">Prodi</button>
+        <button class="px-3 py-1 text-sm rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">Ekstra</button>
       </div>
     </div>
-  </div>
 
-  <!-- galery -->
-  <hr class="opacity-25 mx-20 mt-16">
-  <div class="px-32 mt-2 flex justify-between">
-    <div><button class="hover:underline">Urutan</button></div>
-    <div class="gap-4 space-x-10 mb3">
-      <button>Jurusan</button>
-      <button>Jadwal</button>
-      <button>Prodi</button>
-      <button>Ekstra</button>
-    </div>
-  </div>
-
-  <!-- Data kehadiran mahasisaw -->
-  <div>
-    <div class="mt-8 pt-3 mx-48">
-      <div class="border-transparent">
-        <table class=" w-full text-center">
-          <thead class="border-b border-gray-300">
+    <!-- Tabel Data Kehadiran -->
+    <div class="overflow-x-auto no-scrollbar rounded-lg shadow-md">
+      <div class="w-full">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th class="px-2 py-1" rowspan="2">No</th>
-              <th class="px-2 py-1" rowspan="2">NIM</th>
-              <th class="px-2 py-1" rowspan="2">Angkatan</th>
-              <th class="px-2 py-1" rowspan="2">Nama</th>
-              <th class="px-2 py-1" colspan="2">Jadwal</th>
-              <th class="px-2 py-1" colspan="2">Keterangan</th>
-            </tr>
-            <tr>
-              <th class="px-2 py-1">Matkul</th>
-              <th class="px-2 py-1">Jam</th>
-              <th class="px-2 py-1">Masuk</th>
-              <th class="px-2 py-1">Bolos</th>
-              <th class="px-2 py-1"></th>
+              <th scope="col" class="p-4">No</th>
+              <th scope="col" class="px-6 py-3">Mahasiswa</th>
+              <th scope="col" class="px-6 py-3 hidden lg:table-cell">Angkatan</th>
+              <th scope="col" class="px-6 py-3">Mata Kuliah</th>
+              <th scope="col" class="px-6 py-3 hidden md:table-cell">Jam</th>
+              <th scope="col" class="px-6 py-3 text-center">Status</th>
+              <th scope="col" class="px-6 py-3">Aksi</th>
             </tr>
           </thead>
-
-          <!-- Baris Data -->
-          <div>
-            <tbody>
-              <tr class="bg-gray-800">
-                <td class="px-2 py-3">1</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
-                </td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-3">2</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
-                </td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-              <tr class="bg-gray-800">
-                <td class="px-2 py-3">3</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
-                </td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-3">4</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
-                </td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-              <tr class="bg-gray-800">
-                <td class="px-2 py-3">5</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-green-500 bg-emerald-800 text-white font-semibold shadow-xl shadow-emerald-700/30">Hadir</span>
-                </td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-3">1</td>
-                <td class="px-2 py-3 text-left"><span class="font-extrabold pb-4">Ahmad fatoni</span><br
-                    class="pb-1">NIM2342376642</td>
-                <td class="px-2 py-1">12</td>
-                <td class="px-2 py-1">Ahmad fatoni</td>
-                <td class="px-2 py-1">Basis Data</td>
-                <td class="px-2 py-1">09.00</td>
-                <td class="px-2 py-1 text-red-500 font-bold">-</td>
-                <td class="px-2 py-1"><span class="border-2 px-2 py-1 mx-auto rounded-lg border-red-500 bg-red-800 text-white font-semibold shadow-xl shadow-red-700/30">Bolos</span>
-                </td>
-                <td class="px-2 py-1 text-indigo-500 font-bold">Edit</td>
-              </tr>
-            </tbody>
-          </div>
+          <tbody>
+            <!-- Contoh Baris Data 1 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td class="p-4">1</td>
+              <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-10 h-10 rounded-full" src="https://placehold.co/40x40/7c3aed/ffffff?text=AF" alt="Foto Ahmad Fatoni">
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Ahmad Fatoni</div>
+                  <div class="font-normal text-gray-500">NIM2342376642</div>
+                </div>
+              </th>
+              <td class="px-6 py-4 hidden lg:table-cell">2023</td>
+              <td class="px-6 py-4">Basis Data</td>
+              <td class="px-6 py-4 hidden md:table-cell">09.00</td>
+              <td class="px-6 py-4 text-center">
+                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300">Hadir</span>
+              </td>
+              <td class="px-6 py-4">
+                <a href="#" class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline">Edit</a>
+              </td>
+            </tr>
+            <!-- Contoh Baris Data 2 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td class="p-4">2</td>
+              <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-10 h-10 rounded-full" src="https://placehold.co/40x40/f87171/ffffff?text=BU" alt="Foto Budi Utomo">
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Budi Utomo</div>
+                  <div class="font-normal text-gray-500">NIM2342376643</div>
+                </div>
+              </th>
+              <td class="px-6 py-4 hidden lg:table-cell">2023</td>
+              <td class="px-6 py-4">Jaringan Komputer</td>
+              <td class="px-6 py-4 hidden md:table-cell">13.00</td>
+              <td class="px-6 py-4 text-center">
+                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">Bolos</span>
+              </td>
+              <td class="px-6 py-4">
+                <a href="#" class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline">Edit</a>
+              </td>
+            </tr>
+            <!-- Contoh Baris Data 3 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td class="p-4">3</td>
+              <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-10 h-10 rounded-full" src="https://placehold.co/40x40/34d399/ffffff?text=CS" alt="Foto Citra Sari">
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Citra Sari</div>
+                  <div class="font-normal text-gray-500">NIM2342376644</div>
+                </div>
+              </th>
+              <td class="px-6 py-4 hidden lg:table-cell">2023</td>
+              <td class="px-6 py-4">Kecerdasan Buatan</td>
+              <td class="px-6 py-4 hidden md:table-cell">10.00</td>
+              <td class="px-6 py-4 text-center">
+                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300">Hadir</span>
+              </td>
+              <td class="px-6 py-4">
+                <a href="#" class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline">Edit</a>
+              </td>
+            </tr>
+            <!-- Tambahkan baris data lainnya sesuai kebutuhan -->
+          </tbody>
+        </table>
       </div>
-      </table>
     </div>
-  </div>
-</body>
 
+  </main>
+
+  <script>
+    // Skrip untuk toggle menu mobile
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = mobileMenuButton.querySelector('svg:first-child');
+    const closeIcon = mobileMenuButton.querySelector('svg:last-child');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isMenuOpen = mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden', !isMenuOpen);
+      closeIcon.classList.toggle('hidden', isMenuOpen);
+    });
+  </script>
+
+</body>
 </html>
